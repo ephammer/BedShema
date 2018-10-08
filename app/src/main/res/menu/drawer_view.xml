@@ -18,6 +18,12 @@
             android:id="@+id/nav_tphilath_bh"
             android:icon="@drawable/ic_learning"
             android:title="@string/tphilath_bh_english" />
+        <item
+            android:id="@+id/nav_travel_prayer"
+            android:icon="@drawable/ic_world"
+            android:title="@string/travel_prayer_title"
+            />
+
     </group>
 
     <group>

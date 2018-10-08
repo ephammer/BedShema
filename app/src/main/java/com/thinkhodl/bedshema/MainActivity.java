@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements
     private ArrayList<Prayer> mShemaPrayer;
     private ArrayList<Prayer> mBirkathHasharar;
     private ArrayList<Prayer> mTphilathBH;
+    private ArrayList<Prayer> mTphilathHaerech;
 
     private DrawerLayout mDrawerLayout;
     private Toolbar myToolbar;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_4));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_5));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_6));
-        mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_7,Prayer.TYPE_TITLE));
+        mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_7, Prayer.TYPE_TITLE));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_8));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_yehy_rason_9));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_birkath_hatorah));
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_parashath_haketoreth_1));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_parashath_haketoreth_2));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_parashath_haketoreth_3));
-        mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_korbanoth_rosh_hodesh_title,Prayer.TYPE_CAPTION));
+        mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_korbanoth_rosh_hodesh_title, Prayer.TYPE_CAPTION));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_korbanoth_rosh_hodesh));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_dinei_zvachim_1));
         mBirkathHasharar.add(new Prayer(R.string.preparatory_prayers_dinei_zvachim_2));
@@ -121,8 +122,14 @@ public class MainActivity extends AppCompatActivity implements
 
         // Tphilath BH
         mTphilathBH = new ArrayList<>();
+        mTphilathBH.add(new Prayer(R.string.tphilath_bh_before_english_intro, Prayer.TYPE_CAPTION));
         mTphilathBH.add(new Prayer(R.string.tphilath_bh_before));
+        mTphilathBH.add(new Prayer(R.string.tphilath_bh_after_english_intro, Prayer.TYPE_CAPTION));
         mTphilathBH.add(new Prayer(R.string.tphilath_bh_after));
+
+        // Tphilath Haderech
+        mTphilathHaerech = new ArrayList<>();
+        mTphilathHaerech.add(new Prayer(R.string.travel_prayer));
 
         mRecyclerView = findViewById(R.id.recycler_view);
 
@@ -140,7 +147,6 @@ public class MainActivity extends AppCompatActivity implements
 
         // Set default position naviagation drawer
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
-
 
 
     }
@@ -202,6 +208,22 @@ public class MainActivity extends AppCompatActivity implements
                 // change title
                 mToolbarTitle.setText("Tphilath Beith Hamidrash");
                 return true;
+
+            case R.id.nav_travel_prayer:
+                mAdapter = new PrayerAdapter(mTphilathHaerech);
+                mRecyclerView.setAdapter(mAdapter);
+                // set item as selected to persist highlight
+                menuItem.setChecked(true);
+                // close drawer when item is tapped
+                mDrawerLayout.closeDrawers();
+
+                // Add code here to update the UI based on the item selected
+                // For example, swap UI fragments here
+
+                // change title
+                mToolbarTitle.setText(getString(R.string.travel_prayer_title));
+                return true;
+
 
             case R.id.nav_contact:
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
