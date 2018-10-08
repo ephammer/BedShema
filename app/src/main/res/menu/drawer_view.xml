@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?attr/colorPrimary"
+    >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_shema"
+            android:icon="@drawable/ic_moon_white"
+            android:title="@string/shema_english"
+            />
+        <item
+            android:id="@+id/nav_birkoth_hashrar"
+            android:icon="@drawable/ic_sunrise"
+            android:title="@string/preparatory_prayers_title"
+            />
+
+        <item
+            android:id="@+id/nav_tphilath_bh"
+            android:icon="@drawable/ic_learning"
+            android:title="@string/tphilath_bh_english" />
+    </group>
+
+    <group>
+        <item android:title=""
+            android:checkable="false"
+            android:enabled="false" />
+
+    </group>
+    <group>
+        <item
+            android:id="@+id/nav_contact"
+            android:title="@string/contact"
+            android:icon="@drawable/ic_mail"
+            />
+        <!--<item
+            android:id="@+id/nav_about"
+            android:title="@string/about"
+            android:icon="@drawable/ic_info"
+            />-->
+    </group>
+</menu>
