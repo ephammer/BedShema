@@ -23,7 +23,11 @@
             android:icon="@drawable/ic_world"
             android:title="@string/travel_prayer_title"
             />
-
+        <item
+            android:id="@+id/nav_bitkath_halevoneh"
+            android:icon="@drawable/ic_moon_full"
+            android:title="@string/bitkath_halevoneh_title"
+            />
     </group>
 
     <group>
@@ -32,16 +36,25 @@
             android:enabled="false" />
 
     </group>
+
+    <!--<group>
+        <item
+            android:id="@+id/nav_settings"
+            android:title="@string/action_settings"
+            android:icon="@drawable/ic_settings"/>
+    </group>
+    -->
+
     <group>
         <item
             android:id="@+id/nav_contact"
             android:title="@string/contact"
             android:icon="@drawable/ic_mail"
             />
-        <!--<item
-            android:id="@+id/nav_about"
-            android:title="@string/about"
-            android:icon="@drawable/ic_info"
-            />-->
+        <item
+            android:id="@+id/nav_share"
+            android:title="@string/share"
+            android:icon="@drawable/ic_share"
+            />
     </group>
 </menu>

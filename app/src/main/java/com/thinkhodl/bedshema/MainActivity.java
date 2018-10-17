@@ -15,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements
     private ArrayList<Prayer> mBirkathHasharar;
     private ArrayList<Prayer> mTphilathBH;
     private ArrayList<Prayer> mTphilathHaerech;
+    private ArrayList<Prayer> mBirathHalevanah;
 
     private DrawerLayout mDrawerLayout;
     private Toolbar myToolbar;
@@ -54,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
-        Window window = getWindow();
-        window.setStatusBarColor(getColor(R.color.colorPrimary));
+        setActionBarItems();
+
 
         mToolbarTitle = findViewById(R.id.toolbar_title);
         mDrawerLayout = findViewById(R.id.drawer_layout);
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_05));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_06));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_07));
+        mShemaPrayer.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_08));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_09));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_10));
@@ -131,6 +134,21 @@ public class MainActivity extends AppCompatActivity implements
         mTphilathHaerech = new ArrayList<>();
         mTphilathHaerech.add(new Prayer(R.string.travel_prayer));
 
+        // Birkath Halevanah
+        mBirathHalevanah = new ArrayList<>();
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_beroche));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_yotser));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_roked));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_tipol));
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_david));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_shalom));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_siman_tov));
+
         mRecyclerView = findViewById(R.id.recycler_view);
 
         // use this setting to improve performance if you know that changes
@@ -149,6 +167,14 @@ public class MainActivity extends AppCompatActivity implements
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
 
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void setActionBarItems() {
+        Window window = getWindow();
+        window.setStatusBarColor(getColor(R.color.colorPrimaryDark));
+        View decorView = window.getDecorView();
+        decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
     }
 
     @Override
@@ -224,6 +250,24 @@ public class MainActivity extends AppCompatActivity implements
                 mToolbarTitle.setText(getString(R.string.travel_prayer_title));
                 return true;
 
+            case R.id.nav_bitkath_halevoneh:
+                mAdapter = new PrayerAdapter(mBirathHalevanah);
+                mRecyclerView.setAdapter(mAdapter);
+                // set item as selected to persist highlight
+                menuItem.setChecked(true);
+                // close drawer when item is tapped
+                mDrawerLayout.closeDrawers();
+
+                // Add code here to update the UI based on the item selected
+                // For example, swap UI fragments here
+
+                // change title
+                mToolbarTitle.setText(getString(R.string.bitkath_halevoneh_title));
+                return true;
+/*
+            case R.id.nav_settings:
+                return true;
+*/
 
             case R.id.nav_contact:
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -231,10 +275,25 @@ public class MainActivity extends AppCompatActivity implements
                 intent.setData(Uri.parse("mailto:contact@thinkhodl.com"));
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback BedShema app");
                 startActivity(Intent.createChooser(intent, "Contact"));
-
                 return true;
+
+            case R.id.nav_share:
+                Intent shareLinkIntent = new Intent(Intent.ACTION_SEND);
+                shareLinkIntent.setType("text/plain");
+                shareLinkIntent.putExtra(Intent.EXTRA_SUBJECT, "Take a look at this amazing app");
+                shareLinkIntent.putExtra(Intent.EXTRA_TEXT, "Take a look at this amazing app!\n\nhttps://play.google.com/store/apps/details?id=com.thinkhodl.bedshema");
+                startActivity(Intent.createChooser(shareLinkIntent, "Share the App"));
+                return true;
+
         }
 
         return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setActionBarItems();
     }
 }

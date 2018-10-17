@@ -31,9 +31,8 @@
         android:layout_height="wrap_content"
         style="@style/ParagraphCaptionTextView"
         tools:text="Caption"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
         android:visibility="gone"
+        android:paddingBottom="-16sp"
         />
     <TextView
         android:id="@+id/prayerItem_main"
