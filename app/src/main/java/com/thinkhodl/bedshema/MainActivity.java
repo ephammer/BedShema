@@ -38,8 +38,10 @@ public class MainActivity extends AppCompatActivity implements
     private ArrayList<Prayer> mBirathHalevanah;
 
     private DrawerLayout mDrawerLayout;
-    private Toolbar myToolbar;
 
+    // Action Bar
+    private Toolbar myToolbar;
+    // Action Bar Title
     private TextView mToolbarTitle;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Set the toolbar
         myToolbar = findViewById(R.id.toolbar);
         myToolbar.setTitle("");
         setSupportActionBar(myToolbar);
@@ -55,11 +59,11 @@ public class MainActivity extends AppCompatActivity implements
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
-
         setActionBarItems();
 
-
+        // Set the title for the Action Bar
         mToolbarTitle = findViewById(R.id.toolbar_title);
+
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_05));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_06));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_07));
-        mShemaPrayer.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mShemaPrayer.add(new Prayer(R.string.bed_shema_three_times, Prayer.TYPE_CAPTION));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_08));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_09));
         mShemaPrayer.add(new Prayer(R.string.bed_shema_tehilim_10));
@@ -137,16 +141,16 @@ public class MainActivity extends AppCompatActivity implements
         // Birkath Halevanah
         mBirathHalevanah = new ArrayList<>();
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_beroche));
-        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times, Prayer.TYPE_CAPTION));
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_yotser));
-        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times, Prayer.TYPE_CAPTION));
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_roked));
-        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times, Prayer.TYPE_CAPTION));
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_tipol));
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_david));
-        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times, Prayer.TYPE_CAPTION));
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_shalom));
-        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times,Prayer.TYPE_CAPTION));
+        mBirathHalevanah.add(new Prayer(R.string.bed_shema_three_times, Prayer.TYPE_CAPTION));
         mBirathHalevanah.add(new Prayer(R.string.birkath_halevanah_siman_tov));
 
         mRecyclerView = findViewById(R.id.recycler_view);
@@ -160,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new PrayerAdapter(mShemaPrayer);
+        mAdapter = new PrayerAdapter(mShemaPrayer,this);
         mRecyclerView.setAdapter(mAdapter);
 
         // Set default position naviagation drawer
@@ -169,6 +173,10 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+
+    /*
+     * Change the Status Bar to black and removes notification icons
+     */
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void setActionBarItems() {
         Window window = getWindow();
@@ -177,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE);
     }
 
+    // Menu icon clicked opens Navigation Drawer
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -192,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements
         // Handle navigation view item clicks here.
         switch (menuItem.getItemId()) {
             case R.id.nav_shema:
-                mAdapter = new PrayerAdapter(mShemaPrayer);
+                mAdapter = new PrayerAdapter(mShemaPrayer,this);
                 mRecyclerView.setAdapter(mAdapter);
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
@@ -206,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.nav_birkoth_hashrar:
-                mAdapter = new PrayerAdapter(mBirkathHasharar);
+                mAdapter = new PrayerAdapter(mBirkathHasharar,this);
                 mRecyclerView.setAdapter(mAdapter);
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
@@ -221,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.nav_tphilath_bh:
-                mAdapter = new PrayerAdapter(mTphilathBH);
+                mAdapter = new PrayerAdapter(mTphilathBH,this);
                 mRecyclerView.setAdapter(mAdapter);
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
@@ -236,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.nav_travel_prayer:
-                mAdapter = new PrayerAdapter(mTphilathHaerech);
+                mAdapter = new PrayerAdapter(mTphilathHaerech,this);
                 mRecyclerView.setAdapter(mAdapter);
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
@@ -251,7 +260,7 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.nav_bitkath_halevoneh:
-                mAdapter = new PrayerAdapter(mBirathHalevanah);
+                mAdapter = new PrayerAdapter(mBirathHalevanah,this);
                 mRecyclerView.setAdapter(mAdapter);
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
@@ -264,10 +273,11 @@ public class MainActivity extends AppCompatActivity implements
                 // change title
                 mToolbarTitle.setText(getString(R.string.bitkath_halevoneh_title));
                 return true;
-/*
+
             case R.id.nav_settings:
+                startActivity(new Intent(this,SettingsActivity.class));
                 return true;
-*/
+
 
             case R.id.nav_contact:
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -295,5 +305,10 @@ public class MainActivity extends AppCompatActivity implements
     protected void onResume() {
         super.onResume();
         setActionBarItems();
+    }
+
+    private void loadUsersPreference()
+    {
+
     }
 }

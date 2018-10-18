@@ -88,6 +88,11 @@
     <string name="bsd">בס״ד</string>
     <string name="share">Share</string>
     <string name="bed_shema_three_times">ג״פ:</string>
+    <string name="change_font_size">Change font size</string>
+    <string name="reset_button">Reset</string>
+    <string name="save">Save</string>
+    <string name="preference_file_key">com.thinkhodl.bedshema.PREFERENCE_FILE_KEY</string>
+    <string name="saved_font_size">SAVED_FONT_SIZE</string>
 
 
 </resources>

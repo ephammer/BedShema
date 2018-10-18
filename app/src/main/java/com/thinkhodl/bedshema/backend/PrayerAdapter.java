@@ -1,6 +1,7 @@
 package com.thinkhodl.bedshema.backend;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -18,12 +19,13 @@ import java.util.ArrayList;
 
 public class PrayerAdapter extends RecyclerView.Adapter<PrayerAdapter.ViewHolder> {
 
-    Context mContext;
+    private static Context mContext;
     private ArrayList<Prayer> mArrayPrayer;
     private LayoutInflater mInflater;
 
-    public PrayerAdapter(ArrayList<Prayer> prayers) {
+    public PrayerAdapter(ArrayList<Prayer> prayers, Context context) {
         mArrayPrayer = prayers;
+        mContext = context;
     }
 
     // Create new views (invoked by the layout manager)
@@ -103,6 +105,15 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerAdapter.ViewHolder
             mSubtitleTextView = itemView.findViewById(R.id.prayerItem_subtitle);
             mContentTextView = itemView.findViewById(R.id.prayerItem_main);
             mCaptionTextView =itemView.findViewById(R.id.prayerItem_caption);
+
+            SharedPreferences sharedPreferences = mContext.getSharedPreferences(
+                    mContext.getString(R.string.preference_file_key),
+                    Context.MODE_PRIVATE);
+            int fontSizeMain = sharedPreferences.getInt(mContext.getString(R.string.saved_font_size),20);
+            mContentTextView.setTextSize(fontSizeMain);
+            mTitleTextView.setTextSize((float) (fontSizeMain*1.25));
+            mSubtitleTextView.setTextSize((float) (fontSizeMain*0.8));
+            mCaptionTextView.setTextSize((float) (fontSizeMain*0.8));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 mTitleTextView.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
