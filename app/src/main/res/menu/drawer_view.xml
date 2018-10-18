@@ -37,13 +37,13 @@
 
     </group>
 
-    <!--<group>
+    <group>
         <item
             android:id="@+id/nav_settings"
             android:title="@string/action_settings"
             android:icon="@drawable/ic_settings"/>
     </group>
-    -->
+
 
     <group>
         <item
