@@ -20,13 +20,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_book_shema_white" />
+        android:src="@drawable/ic_book_shema" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/by_ephraim_hammer"
-        android:textColor="@color/colorPrimaryLight"
+        android:textColor="@color/colorSecondaryDark"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/deadheadscript"
         android:textSize="18sp"
