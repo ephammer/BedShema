@@ -1,6 +1,7 @@
 package com.thinkhodl.bedshema;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -48,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
                 Context.MODE_PRIVATE);
 
         mThemeMode = mSharedPref.getInt(getString(R.string.saved_theme_mode),
-                AppCompatDelegate.MODE_NIGHT_YES);
+                AppCompatDelegate.MODE_NIGHT_AUTO);
 
         AppCompatDelegate.setDefaultNightMode( mThemeMode);
 
@@ -196,6 +197,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        Intent returnIntent = new Intent();
+        setResult(RESULT_OK,returnIntent);
         super.onDestroy();
     }
 }
