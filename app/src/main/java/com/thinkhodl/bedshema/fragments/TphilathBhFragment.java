@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.thinkhodl.bedshema.R;
 import com.thinkhodl.bedshema.backend.PrayerAdapter;
@@ -54,7 +53,7 @@ public class TphilathBhFragment extends Fragment {
 
         android.support.v7.widget.Toolbar mToolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView mToolbarTitle = mToolbar.findViewById(R.id.toolbar_title);
-        if( mToolbarTitle != null)
+        if (mToolbarTitle != null)
             mToolbarTitle.setText(getString(R.string.tphilath_bh_english));
         return rootView;
     }

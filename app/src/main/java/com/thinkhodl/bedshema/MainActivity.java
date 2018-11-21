@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
-
 import com.thinkhodl.bedshema.fragments.BedShemaFragment;
 import com.thinkhodl.bedshema.fragments.BirkathHalevanahFragment;
 import com.thinkhodl.bedshema.fragments.BirkothHashrarFragment;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements
         mThemeMode = mSharedPref.getInt(getString(R.string.saved_theme_mode),
                 AppCompatDelegate.MODE_NIGHT_AUTO);
 
-        AppCompatDelegate.setDefaultNightMode( mThemeMode);
+        AppCompatDelegate.setDefaultNightMode(mThemeMode);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements
 
         // Set default position navigation drawer
         if (savedInstanceState == null) {
-            MenuItem item =  navigationView.getMenu().getItem(0);
+            MenuItem item = navigationView.getMenu().getItem(0);
             onNavigationItemSelected(item);
         }
 
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements
     private ActionBarDrawerToggle setupDrawerToggle() {
         // NOTE: Make sure you pass in a valid toolbar reference.  ActionBarDrawToggle() does not require it
         // and will not render the hamburger icon without it.
-        return new ActionBarDrawerToggle(this, mDrawerLayout, myToolbar, R.string.drawer_open,  R.string.drawer_close);
+        return new ActionBarDrawerToggle(this, mDrawerLayout, myToolbar, R.string.drawer_open, R.string.drawer_close);
     }
 
     @Override
@@ -148,13 +147,6 @@ public class MainActivity extends AppCompatActivity implements
                 fragmentManager.beginTransaction().replace(R.id.prayer_fragment_container,
                         new BedShemaFragment()).commit();
 
-                /*
-                mAdapter = new PrayerAdapter(PrayerLists.getmShemaPrayer(), this);
-                mRecyclerView.setAdapter(mAdapter);
-                // change title
-                mToolbarTitle.setText(getString(R.string.shema_english));
-                */
-
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
                 // close drawer when item is tapped
@@ -170,13 +162,6 @@ public class MainActivity extends AppCompatActivity implements
                 // Insert the fragment by replacing any existing fragment
                 fragmentManager.beginTransaction().replace(R.id.prayer_fragment_container,
                         new BirkothHashrarFragment()).commit();
-
-                /*
-                mAdapter = new PrayerAdapter(PrayerLists.getmBirkathHasharar(), this);
-                mRecyclerView.setAdapter(mAdapter);
-                // change title
-                mToolbarTitle.setText(getString(R.string.preparatory_prayers_title));
-                */
 
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
@@ -195,14 +180,6 @@ public class MainActivity extends AppCompatActivity implements
                 fragmentManager.beginTransaction().replace(R.id.prayer_fragment_container,
                         new TphilathBhFragment()).commit();
 
-                /*
-                mAdapter = new PrayerAdapter(PrayerLists.getmTphilathBH(), this);
-                mRecyclerView.setAdapter(mAdapter);
-                // change title
-                mToolbarTitle.setText("Tphilath Beith Hamidrash");
-                */
-
-
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
                 // close drawer when item is tapped
@@ -219,13 +196,6 @@ public class MainActivity extends AppCompatActivity implements
                 fragmentManager.beginTransaction().replace(R.id.prayer_fragment_container,
                         new TravelPrayerFragment()).commit();
 
-                /*
-                mAdapter = new PrayerAdapter(PrayerLists.getmTphilathHaerech(), this);
-                mRecyclerView.setAdapter(mAdapter);
-                // change title
-                mToolbarTitle.setText(getString(R.string.travel_prayer_title));
-
-                */
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
                 // close drawer when item is tapped
@@ -242,14 +212,6 @@ public class MainActivity extends AppCompatActivity implements
                 fragmentManager.beginTransaction().replace(R.id.prayer_fragment_container,
                         new BirkathHalevanahFragment()).commit();
 
-                /*
-                mAdapter = new PrayerAdapter(PrayerLists.getmBirkathHalevanah(), this);
-                mRecyclerView.setAdapter(mAdapter);
-
-                // change title
-                mToolbarTitle.setText(getString(R.string.birkath_halevoneh_title));
-                */
-
                 // set item as selected to persist highlight
                 menuItem.setChecked(true);
                 // close drawer when item is tapped
@@ -261,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements
                 return true;
 
             case R.id.nav_settings:
-                startActivityForResult(new Intent(this, SettingsActivity.class),1);
+                startActivityForResult(new Intent(this, SettingsActivity.class), 1);
                 return true;
 
 
@@ -301,9 +263,6 @@ public class MainActivity extends AppCompatActivity implements
         super.onRestart();
     }
 
-    private void loadUsersPreference() {
-
-    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 

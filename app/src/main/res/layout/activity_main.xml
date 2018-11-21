@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,14 +19,6 @@
 
         <include layout="@layout/toolbar"/>
 
-
-
-        <!--<android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            style="@style/Extra"
-            />-->
         <FrameLayout
             android:id="@+id/prayer_fragment_container"
             android:layout_width="match_parent"

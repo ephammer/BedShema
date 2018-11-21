@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 public class BirkothHashrarFragment extends Fragment {
     @Nullable
     @BindView(R.id.recycler_view)
-     RecyclerView mRecyclerView;
+    RecyclerView mRecyclerView;
 
     public BirkothHashrarFragment() {
         // Required empty public constructor
@@ -53,7 +53,7 @@ public class BirkothHashrarFragment extends Fragment {
 
         Toolbar mToolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView mToolbarTitle = mToolbar.findViewById(R.id.toolbar_title);
-        if( mToolbarTitle != null)
+        if (mToolbarTitle != null)
             mToolbarTitle.setText(getString(R.string.preparatory_prayers_title));
 
         return rootView;

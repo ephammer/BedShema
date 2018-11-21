@@ -55,7 +55,7 @@ public class TravelPrayerFragment extends Fragment {
 
         Toolbar mToolbar = Objects.requireNonNull(getActivity()).findViewById(R.id.toolbar);
         TextView mToolbarTitle = mToolbar.findViewById(R.id.toolbar_title);
-        if( mToolbarTitle != null)
+        if (mToolbarTitle != null)
             mToolbarTitle.setText(getString(R.string.travel_prayer_title));
         return rootView;
     }

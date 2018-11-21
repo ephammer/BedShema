@@ -6,17 +6,16 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -34,8 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Button mResetFontSizeButton;
     private Button mSaveFontSizeButton;
 
-    private RadioGroup  mRadioGroup;
-    private RadioButton mThemeChoiceRadio;
+    private RadioGroup mRadioGroup;
 
     private SharedPreferences mSharedPref;
     private int mThemeMode;
@@ -51,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
         mThemeMode = mSharedPref.getInt(getString(R.string.saved_theme_mode),
                 AppCompatDelegate.MODE_NIGHT_AUTO);
 
-        AppCompatDelegate.setDefaultNightMode( mThemeMode);
+        AppCompatDelegate.setDefaultNightMode(mThemeMode);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
@@ -63,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
         myToolbar.setTitle(getString(R.string.action_settings));
         myToolbar.setTitle("");
         setSupportActionBar(myToolbar);
-        mToolbarTitle =findViewById(R.id.toolbar_title);
+        mToolbarTitle = findViewById(R.id.toolbar_title);
         mToolbarTitle.setText(R.string.action_settings);
 
         ActionBar actionbar = getSupportActionBar();
@@ -87,8 +85,8 @@ public class SettingsActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
 
                 mParagraphMainTextView.setTextSize(i);
-                mParagraphTitleTextView.setTextSize((float) (i*1.25));
-                mParagraphSubtitleTextView.setTextSize((float) (i*0.8));
+                mParagraphTitleTextView.setTextSize((float) (i * 1.25));
+                mParagraphSubtitleTextView.setTextSize((float) (i * 0.8));
 
             }
 
@@ -102,7 +100,7 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
-        mFontSeekBar.setProgress(mSharedPref.getInt(getString(R.string.saved_font_size),20));
+        mFontSeekBar.setProgress(mSharedPref.getInt(getString(R.string.saved_font_size), 20));
 
         mSaveFontSizeButton = findViewById(R.id.save_button);
         mSaveFontSizeButton.setOnClickListener(new View.OnClickListener() {
@@ -120,7 +118,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 mParagraphMainTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
-                        getResources().getDimension(R.dimen.textSizeParagraphMain_default) );
+                        getResources().getDimension(R.dimen.textSizeParagraphMain_default));
                 mParagraphTitleTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
                         getResources().getDimension(R.dimen.textSizeParagraphTitle_default));
                 mParagraphSubtitleTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX,
@@ -133,15 +131,13 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
 
-
         mRadioGroup = findViewById(R.id.radio_theme_group);
         initateRadioButtons();
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 SharedPreferences.Editor editor = mSharedPref.edit();
-                switch (i)
-                {
+                switch (i) {
                     case R.id.day_theme_radioButton:
                         editor.putInt(getString(R.string.saved_theme_mode),
                                 AppCompatDelegate.MODE_NIGHT_NO).apply();
@@ -178,10 +174,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    private void initateRadioButtons()
-    {
-        switch (mThemeMode)
-        {
+    private void initateRadioButtons() {
+        switch (mThemeMode) {
             case AppCompatDelegate.MODE_NIGHT_NO:
                 mRadioGroup.check(R.id.day_theme_radioButton);
                 break;
@@ -198,7 +192,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         Intent returnIntent = new Intent();
-        setResult(RESULT_OK,returnIntent);
+        setResult(RESULT_OK, returnIntent);
         super.onDestroy();
     }
 }
