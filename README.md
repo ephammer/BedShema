@@ -7,6 +7,7 @@ Bed Shema is an app that contains the principal jewish prayers that differ from 
 * Travel Prayer - תפילת הדרך
 * Birkath HaLevoneh - ברכת הלבנה
 
+![samsung_s8_mockup_list_04](https://user-images.githubusercontent.com/17436690/48903831-4c0f9f80-ee65-11e8-993e-af16b114bb0c.png)
 
 ## Day/Night Theme
 The app has two themes Dark and Light to allow better reading during night and day, with an automatic mode that changes between day/night based on the time of day.
