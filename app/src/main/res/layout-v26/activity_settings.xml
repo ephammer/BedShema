@@ -1,167 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/black"
-    tools:context=".SettingsActivity"
-    >
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginStart="10sp"
-        android:layout_marginEnd="10sp"
-        android:background="@drawable/layout_bg"
-        android:elevation="16dp"
-        android:theme="@style/Toolbar"
-        >
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/deadheadscript"
-            android:paddingTop="-4sp"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:fontFamily="@font/gveretlevinalefalefalefregular"
-            android:paddingTop="-4sp"
-            android:paddingEnd="20sp"
-            android:text="@string/bsd"
-            android:textColor="@color/colorAccent"
-            android:textSize="16sp" />
-    </android.support.v7.widget.Toolbar>
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="320sp"
-        android:paddingTop="8sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:orientation="vertical"
-            >
-
-            <TextView
-                android:id="@+id/paragraph_title_settings"
-                style="@style/ParagraphTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:justificationMode="inter_word"
-                android:text="@string/bed_shema_shema" />
-
-            <TextView
-                android:id="@+id/paragraph_subtitle_settings"
-                style="@style/ParagraphSubTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:justificationMode="inter_word"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:text="@string/bed_shema_shema_baruch_shem_kevod"
-
-                />
-
-            <TextView
-                android:id="@+id/paragraph_main_settings"
-                style="@style/ParagraphSubTitleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:justificationMode="inter_word"
-                android:padding="16dp"
-                android:text="@string/bed_shema_shema_firstparagraph"
-
-                />
-        </LinearLayout>
-    </ScrollView>
-
     <LinearLayout
-        android:id="@+id/change_text_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/layout_bg"
+
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView">
-
-        <TextView
-            android:id="@+id/change_font_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/deadheadscript"
-            android:text="@string/change_font_size"
-            android:textColor="@color/colorAccent"
-            android:textSize="30sp"
-            />
-
-        <SeekBar
-            android:id="@+id/change_font_seekBar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSecondary"
+        tools:context=".SettingsActivity">
+    <include
+        layout="@layout/toolbar"/>
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:max="40"
-            android:min="8"
-            android:padding="16sp"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_weight="2"
+            android:paddingTop="8sp">
 
-            <Button
-                android:id="@+id/reset_button"
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryDark"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/paragraph_title_settings"
+                    style="@style/ParagraphTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="@string/bed_shema_shema" />
+
+                <TextView
+                    android:id="@+id/paragraph_subtitle_settings"
+                    style="@style/ParagraphSubTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/bed_shema_shema_baruch_shem_kevod"
+
+                    />
+
+                <TextView
+                    android:id="@+id/paragraph_main_settings"
+                    style="@style/ParagraphSubTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:padding="16dp"
+                    android:text="@string/bed_shema_shema_firstparagraph"
+
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/change_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
+            android:elevation="4dp"
+            android:orientation="vertical">
+            <!--app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView"-->
+
+
+            <TextView
+                android:id="@+id/change_font_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="@font/deadheadscript"
-                android:padding="8sp"
-                android:text="@string/reset_button"
-                android:textAllCaps="false"
-                android:textColor="@android:color/holo_red_dark"
+                android:text="@string/change_font_size"
+                android:textColor="@color/text_color_primary"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/save_button"
+            <SeekBar
+                android:id="@+id/change_font_seekBar"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:max="40"
+                android:min="8"
+                android:padding="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <Button
+                    android:id="@+id/reset_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondaryLight"
+                    android:fontFamily="@font/deadheadscript"
+                    android:padding="8sp"
+                    android:text="@string/reset_button"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondaryLight"
+                    android:fontFamily="@font/deadheadscript"
+                    android:padding="8sp"
+                    android:text="@string/save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="30sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+
+
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/layout_bg"
+            android:elevation="4dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryDark"
                 android:fontFamily="@font/deadheadscript"
-                android:padding="8sp"
-                android:text="@string/save"
-                android:textAllCaps="false"
-                android:textColor="@color/colorAccent"
-                android:textSize="30sp"
-                />
+                android:padding="8dp"
+                android:text="@string/color_theme"
+                android:textColor="@color/text_color_primary"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_wb_sunny" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_moon_phase_outline" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_day_night_auto" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/radio_theme_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+
+                    <RadioButton
+                        android:id="@+id/day_theme_radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_horizontal|center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/deadheadscript"
+                        android:gravity="center"
+                        android:text="@string/day"
+                        android:textColor="@color/text_color_primary"
+                        android:textSize="24sp"
+                        app:buttonTint="@android:color/holo_red_dark"
+
+                        />
+
+                    <RadioButton
+                        android:id="@+id/night_theme_radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/deadheadscript"
+                        android:gravity="center"
+                        android:text="@string/night"
+                        android:textColor="@color/text_color_primary"
+                        android:textSize="24sp"
+
+                        app:buttonTint="@android:color/holo_red_dark" />
+
+                    <RadioButton
+                        android:id="@+id/auto_radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/deadheadscript"
+                        android:gravity="center"
+                        android:text="@string/auto"
+                        android:textColor="@color/text_color_primary"
+                        android:textSize="24sp"
+                        app:buttonTint="@android:color/holo_red_dark" />
+
+                </RadioGroup>
+            </LinearLayout>
+
         </LinearLayout>
+
     </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>

@@ -75,9 +75,9 @@
     <string name="birkath_halevanah_david">דָּוִד מֶלֶךְ יִשרָאֵל חַי וְקַיָּם.</string>
     <string name="birkath_halevanah_shalom">שָׁלוֹם עֲלֵיכֶם.\nעֲלֵיכֶם שָׁלוֹם.</string>
     <string name="birkath_halevanah_siman_tov">סִימָן טוֹב וּמַזָל טוֹב יְהֵא לָנוּ וּלְכָל יִשְׂרָאֵל. אָמֵן.</string>
-    <string name="bitkath_halevoneh_title">Birkath HaLevoneh</string>
+    <string name="birkath_halevoneh_title">Birkath HaLevoneh</string>
 
-    <string name="tphilath_bh_english">Tphilath BH</string>
+    <string name="tphilath_bh_english">Tphilath Beith Hamidrash</string>
     <string name="tphilath_bh_before">יְהִי רָצוֹן מִלְפָנֶיךָ ה\' אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי, שֶלֹּא יֶאֱרַע דְבַר תַּקָלָה עַל יָדִי, וְלֹא אֹמַר עַל טָמֵא טָהוֹר וְלֹא עַל טָהוֹר טָמֵא, וְלֹא אֶכָשֵל בִּדְבַר הֲלָכָה וְיִשְֹמְחוּ בִי חֲבֵרַי, וְלֹא יִכָּשְלוּ חֲבֵרַי בִּדְבַר הֲלָכָה וְאֶשְֹמַח בָּהֶם.</string>
     <string name="tphilath_bh_after">מוֹדֶה אֲנִי מִלְפָנֶיךָ ה\' אֱלֹהַי וֵאלֹהֵי אֲבוֹתַי שֶׁשַֹמְתָּ חֶלְקִי מִיּוֹשְבֵי בֵית הַמִּדְרָשׁ וְלֹא שַּמתָּ חֶלְקִי מִיּוֹשְבֵי קְרָנוֹת. שֶׁאֲנִי מַשְׁכִּים והם מַשְׁכִּימִים, אֲנִי מַשְׁכִּים לְדִבְרֵי תוֹרָה וְהֵם מַשְׁכִּימִים לִדֽבָרִים בְּטֵלִים. אֲנִי עָמֵל וְהֵם עֲמֵלִים, אֲנִי עָמֵל וּמְקַבֵּל שָֹכָר וְהֵם עֲמֵלִים וְאֵינָם מְקַבְּלִים שָֹכָר, אֲנִי רָץ וְהֵם רָצִים, אֲנִי רָץ לְחַיֵּי הָעוֹלָם הַבָּא וְהֵם רָצִים לִבְאֵר שָׁחַת.</string>
     <string name="preparatory_prayers_title">Preparatory Prayers</string>
@@ -93,6 +93,17 @@
     <string name="save">Save</string>
     <string name="preference_file_key">com.thinkhodl.bedshema.PREFERENCE_FILE_KEY</string>
     <string name="saved_font_size">SAVED_FONT_SIZE</string>
+    <string name="color_theme">Color Theme</string>
+    <string name="day">Day</string>
+    <string name="night">Night</string>
+    <string name="auto">Auto</string>
+    <string name="saved_theme_mode">SAVED_THEME_MODE</string>
 
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
