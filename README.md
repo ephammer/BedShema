@@ -12,6 +12,8 @@ Bed Shema is an app that contains the principal jewish prayers that differ from 
 ## Day/Night Theme
 The app has two themes Dark and Light to allow better reading during night and day, with an automatic mode that changes between day/night based on the time of day.
 This is made possible thanks to the [DayNight functionality in AppCompat](https://medium.com/androiddevelopers/appcompat-v23-2-daynight-d10f90c83e94).
+
+
 ![samsung_s8_mockup_daynight_03](https://user-images.githubusercontent.com/17436690/48903953-98f37600-ee65-11e8-8165-9bf0016acb09.png)
 
 
