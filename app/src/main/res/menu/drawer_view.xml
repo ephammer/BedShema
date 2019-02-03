@@ -28,6 +28,13 @@
             android:icon="@drawable/ic_moon_full"
             android:title="@string/birkath_halevoneh_title"
             />
+        <item
+            android:title=""/>
+        <item
+            android:id="@+id/nav_zmanim"
+            android:icon="@drawable/ic_timetable"
+            android:title="@string/zmanim_title"
+            />
     </group>
 
     <group>

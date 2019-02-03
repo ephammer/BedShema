@@ -28,6 +28,7 @@ import com.thinkhodl.bedshema.fragments.BirkathHalevanahFragment;
 import com.thinkhodl.bedshema.fragments.BirkothHashrarFragment;
 import com.thinkhodl.bedshema.fragments.TphilathBhFragment;
 import com.thinkhodl.bedshema.fragments.TravelPrayerFragment;
+import com.thinkhodl.bedshema.fragments.ZmanimFragment;
 
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -222,6 +223,21 @@ public class MainActivity extends AppCompatActivity implements
 
                 return true;
 
+            case R.id.nav_zmanim:
+                // Insert the fragment by replacing any existing fragment
+                fragmentManager.beginTransaction().replace(R.id.prayer_fragment_container,
+                        new ZmanimFragment()).commit();
+
+                // set item as selected to persist highlight
+                menuItem.setChecked(true);
+                // close drawer when item is tapped
+                mDrawerLayout.closeDrawers();
+
+                // Add code here to update the UI based on the item selected
+                // For example, swap UI fragments here
+
+                return true;
+
             case R.id.nav_settings:
                 startActivityForResult(new Intent(this, SettingsActivity.class), 1);
                 return true;
@@ -245,6 +261,7 @@ public class MainActivity extends AppCompatActivity implements
                                 "https://play.google.com/store/apps/details?id=com.thinkhodl.bedshema");
                 startActivity(Intent.createChooser(shareLinkIntent, "Share the App"));
                 return true;
+
 
         }
 

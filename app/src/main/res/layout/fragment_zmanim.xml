@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Extra"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ZmanimFragment"
+    android:id="@+id/zmanim_fragment_layout"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/zmanim_linear_layout"
+        android:visibility="gone"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:id="@+id/textView_dawn_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dawn_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_dawn_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                tools:text="5:17"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                style="@style/ParagraphTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_dawn_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dawn_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/textView_earliest_talis_tefillin_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/earliest_talis_tefillin_title_en"
+                style="@style/ZmanimTitleTextView"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                />
+            <TextView
+                android:id="@+id/textView_earliest_talis_tefillin_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                tools:text="5:39"
+                android:layout_gravity="center_vertical"
+
+                style="@style/ParagraphTitleTextView"
+
+                />
+            <TextView
+                android:id="@+id/textView_earliest_talis_tefillin_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/earliest_talis_tefillin_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            >
+            <TextView
+                android:id="@+id/textView_sunrise_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sunrise_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_sunrise_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                tools:text="6:31"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_sunrise_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sunrise_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            >
+            <TextView
+                android:id="@+id/textView_latest_shema_magen_avraham_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latest_shema_magen_avraham_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_latest_shema_magen_avraham_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="8:35"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_latest_shema_magen_avraham_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latest_shema_magen_avraham_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_latest_shema_gra_baal_hatanya_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latest_shema_gra_baal_hatanya_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_latest_shema_gra_baal_hatanya_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="8:35"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_latest_shema_gra_baal_hatanya_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latest_shema_gra_baal_hatanya_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_latest_shachris_gra_baal_hatanya_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latest_shachris_gra_baal_hatanya_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_latest_shachris_gra_baal_hatanya_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="8:35"
+                style="@style/ParagraphTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_latest_shachris_gra_baal_hatanya_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latest_shachris_gra_baal_hatanya_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_midday_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/midday_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_midday_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="5:39"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_midday_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/midday_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_earliest_mincha_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/earliest_mincha_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_earliest_mincha_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="5:39"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_earliest_mincha_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/earliest_mincha_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_plag_hamincha_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/plag_hamincha_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_plag_hamincha_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="5:39"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_plag_hamincha_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/plag_hamincha_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_sunset_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sunset_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_sunset_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="5:39"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_sunset_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sunset_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_nightfall_three_stars_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nightfall_three_stars_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_nightfall_three_stars_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="5:39"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_nightfall_three_stars_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nightfall_three_stars_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#757575"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textView_nightfall_seventy_two_minutes_title_en"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nightfall_seventy_two_minutes_title_en"
+                style="@style/ZmanimTitleTextView"
+                />
+            <TextView
+                android:id="@+id/textView_nightfall_seventy_two_minutes_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+
+                tools:text="5:39"
+                style="@style/ParagraphTitleTextView"/>
+            <TextView
+                android:id="@+id/textView_nightfall_seventy_two_minutes_title_he"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nightfall_seventy_two_minutes_title_he"
+                style="@style/ZmanimTitleTextView"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="@string/location_rationale"
+        android:id="@+id/textView_location_rationale"
+        style="@style/ParagraphTitleTextView"/>
+
+</FrameLayout>

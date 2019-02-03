@@ -67,4 +67,12 @@
 
     </style>
 
+    <style name="ZmanimTitleTextView" parent="CustomTextView">
+        <item name="android:textDirection">anyRtl</item>
+        <item name="android:textSize">@dimen/textSizeParagraphSubTitle</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
 </resources>

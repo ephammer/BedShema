@@ -28,7 +28,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="by_ephraim_hammer">by Ephraim Hammer</string>
-    <string name="birkoth_hashrar_english">Birkoth Hashrar</string>
+    <string name="birkoth_hashrar_english">Birkoth Hasharar</string>
     <string name="contact">Contact</string>
     <string name="about">About</string>
 
@@ -102,6 +102,33 @@
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
+    <string name="location_rationale">This part of the app needs access to your location to display proper zmanim.</string>
+    <string name="zmanim_title">Zmanim</string>
+    <string name="dawn_title_en">Dawn</string>
+    <string name="dawn_title_he">עלות השחר</string>
+    <string name="earliest_talis_tefillin_title_en"><![CDATA[Earliest talis & tefillin]]></string>
+    <string name="earliest_talis_tefillin_title_he">זמן ציצית ותפילין</string>
+    <string name="sunrise_title_en">Sunrise</string>
+    <string name="sunrise_title_he">הנץ החמה</string>
+    <string name="latest_shema_magen_avraham_title_en">Latest shema Magen Avraham</string>
+    <string name="latest_shema_magen_avraham_title_he">סוף זמן קריאת שמע מגן אברהם</string>
+    <string name="latest_shema_gra_baal_hatanya_title_en"><![CDATA[Latest shema Gra & Baal HaTanya]]></string>
+    <string name="latest_shema_gra_baal_hatanya_title_he">סוף זמן קריאת שמע גר\"א ובעל התניא</string>
+    <string name="midday_title_en">Midday</string>
+    <string name="midday_title_he">חצות היום</string>
+    <string name="earliest_mincha_title_en">Earliest Mincha</string>
+    <string name="earliest_mincha_title_he">מנחה גדולה</string>
+    <string name="plag_hamincha_title_en">Plag HaMincha</string>
+    <string name="plag_hamincha_title_he">פלג המנחה</string>
+    <string name="sunset_title_en">Sunset</string>
+    <string name="sunset_title_he">שקיעת החמה</string>
+    <string name="nightfall_three_stars_title_en">Nightfall - 3 stars emerge</string>
+    <string name="nightfall_three_stars_title_he">לילה - צאת ג\' כוכבים</string>
+    <string name="nightfall_seventy_two_minutes_title_en">Nightfall - 72 minutes</string>
+    <string name="nightfall_seventy_two_minutes_title_he">לילה - 72 דקות</string>
+    <string name="latest_shachris_gra_baal_hatanya_title_en"><![CDATA[Latest shachris Gra & Baal HaTanya]]></string>
+    <string name="latest_shachris_gra_baal_hatanya_title_he">סוף זמן תפילה גר\"א ובעל התניא</string>
 
 
 </resources>
