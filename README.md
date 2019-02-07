@@ -24,7 +24,6 @@ This app makes use of multiple custom fonts especially hebrew fonts from the [op
 <p align="center"> 
 <img src="https://user-images.githubusercontent.com/17436690/52405456-f9449c00-2ad3-11e9-8536-ab9399126d01.gif">
 </p>
-![ezgif-4-c9a775b69c9b](https://user-images.githubusercontent.com/17436690/52405456-f9449c00-2ad3-11e9-8536-ab9399126d01.gif)
 
 ## PlayStore
 The app is currently available as beta release in the [Google PlayStore](https://play.google.com/store/apps/details?id=com.thinkhodl.bedshema).
