@@ -20,7 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.thinkhodl.bedshema.R;
 import com.thinkhodl.bedshema.backend.Utils;
@@ -221,10 +220,6 @@ public class ZmanimFragment extends Fragment {
         mLocationPermissionButton.setVisibility(View.GONE);
         mLocationRationaleTextView.setText(R.string.location_error_acquisition);
 
-        LocationRequest mLocationRequest = LocationRequest.create()
-                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
-                .setInterval(10 * 1000)        // 10 seconds, in milliseconds
-                .setFastestInterval(1 * 1000); // 1 second, in milliseconds
     }
     private void showZmanim(Location location) {
         ComplexZmanimCalendar complexZmanimCalendar = Utils.getComplexZmanimCalendar(location);
