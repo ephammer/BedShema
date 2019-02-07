@@ -12,12 +12,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.thinkhodl.bedshema.R;
 import com.thinkhodl.bedshema.backend.Utils;
 
@@ -93,6 +97,17 @@ public class ZmanimFragment extends Fragment {
     @BindView(R.id.textView_nightfall_seventy_two_minutes_time)
     TextView mNightfallSeventyTwoMinutesTextView;
 
+    @Nullable
+    @BindView(R.id.earthplussateliteImageView)
+    ImageView mEarthPlusSateliteImageView;
+
+    @Nullable
+    @BindView(R.id.location_permission_button)
+    Button mLocationPermissionButton;
+
+    @Nullable
+    @BindView(R.id.missing_permission_location_layout)
+    LinearLayout mMissingPermissionLocationLayout;
 
     public ZmanimFragment() {
         // Required empty public constructor
@@ -160,14 +175,10 @@ public class ZmanimFragment extends Fragment {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                requestPermissions(
-                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_COARSE_LOCATION);
+                showError();
             } else {
                 // No explanation needed; request the permission
-                requestPermissions(
-                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_COARSE_LOCATION);
+                showError();
 
                 // MY_PERMISSIONS_REQUEST_COARSE_LOCATION is an
                 // app-defined int constant. The callback method gets the
@@ -181,10 +192,40 @@ public class ZmanimFragment extends Fragment {
 
 
     private void showError() {
-        mLocationRationaleTextView.setVisibility(View.VISIBLE);
+        mMissingPermissionLocationLayout.setVisibility(View.VISIBLE);
         mZmanimLinearLayout.setVisibility(View.GONE);
+        mLocationPermissionButton.setVisibility(View.VISIBLE);
+        mLocationRationaleTextView.setText(R.string.location_rationale);
+
+
+        Animation rotation = AnimationUtils.loadAnimation(getContext(), R.anim.rotation);
+        mEarthPlusSateliteImageView.startAnimation(rotation);
+
+        mLocationPermissionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                requestPermissions(
+                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_COARSE_LOCATION);
+            }
+        });
     }
 
+    private void showGPSError() {
+        mMissingPermissionLocationLayout.setVisibility(View.VISIBLE);
+        mZmanimLinearLayout.setVisibility(View.GONE);
+
+        Animation rotation = AnimationUtils.loadAnimation(getContext(), R.anim.rotation);
+        mEarthPlusSateliteImageView.startAnimation(rotation);
+
+        mLocationPermissionButton.setVisibility(View.GONE);
+        mLocationRationaleTextView.setText(R.string.location_error_acquisition);
+
+        LocationRequest mLocationRequest = LocationRequest.create()
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(10 * 1000)        // 10 seconds, in milliseconds
+                .setFastestInterval(1 * 1000); // 1 second, in milliseconds
+    }
     private void showZmanim(Location location) {
         ComplexZmanimCalendar complexZmanimCalendar = Utils.getComplexZmanimCalendar(location);
 
@@ -202,7 +243,7 @@ public class ZmanimFragment extends Fragment {
         mNightfallSeventyTwoMinutesTextView.setText(Utils.formatTime(Utils.getNightfallSeventyTwoMinutesTime(complexZmanimCalendar)));
 
 
-        mLocationRationaleTextView.setVisibility(View.GONE);
+        mMissingPermissionLocationLayout.setVisibility(View.GONE);
         mZmanimLinearLayout.setVisibility(View.VISIBLE);
 
 
@@ -218,7 +259,7 @@ public class ZmanimFragment extends Fragment {
                     if (location != null) {
                         showZmanim(location);
                     } else {
-                        showError();
+                        showGPSError();
                     }
 
                 });

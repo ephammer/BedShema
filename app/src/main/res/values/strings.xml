@@ -129,6 +129,7 @@
     <string name="nightfall_seventy_two_minutes_title_he">לילה - 72 דקות</string>
     <string name="latest_shachris_gra_baal_hatanya_title_en"><![CDATA[Latest shachris Gra & Baal HaTanya]]></string>
     <string name="latest_shachris_gra_baal_hatanya_title_he">סוף זמן תפילה גר\"א ובעל התניא</string>
-
+    <string name="give_location_permission">Give Location Permission</string>
+    <string name="location_error_acquisition">There was an error getting your location please check your GPS status</string>
 
 </resources>
