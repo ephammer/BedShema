@@ -20,6 +20,9 @@ This is made possible thanks to the [DayNight functionality in AppCompat](https:
 ## Custom Fonts
 This app makes use of multiple custom fonts especially hebrew fonts from the [opensiddur project](https://opensiddur.org/help/fonts/).
 
+## Location Animation For Zmanim
+![ezgif-4-256f8f1f7537](https://user-images.githubusercontent.com/17436690/52404634-285a0e00-2ad2-11e9-850e-20a4200a14a8.gif)
+
 ## PlayStore
 The app is currently available as beta release in the [Google PlayStore](https://play.google.com/store/apps/details?id=com.thinkhodl.bedshema).
 ## Contributing
