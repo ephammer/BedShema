@@ -21,6 +21,9 @@ This is made possible thanks to the [DayNight functionality in AppCompat](https:
 This app makes use of multiple custom fonts especially hebrew fonts from the [opensiddur project](https://opensiddur.org/help/fonts/).
 
 ## Location Animation For Zmanim
+<p align="center"> 
+<img src="https://user-images.githubusercontent.com/17436690/52405456-f9449c00-2ad3-11e9-8536-ab9399126d01.gif">
+</p>
 ![ezgif-4-c9a775b69c9b](https://user-images.githubusercontent.com/17436690/52405456-f9449c00-2ad3-11e9-8536-ab9399126d01.gif)
 
 ## PlayStore
